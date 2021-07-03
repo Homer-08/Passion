@@ -1,0 +1,11 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/resources/images/entrance\ background.jpg);
+  height: 100vh;
+  background-size: cover;
+}
