@@ -9,3 +9,7 @@ body {
   height: 100vh;
   background-size: cover;
 }
+
+.col {
+  height: 100vh;
+}
