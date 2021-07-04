@@ -13,3 +13,10 @@ body {
 .col {
   height: 100vh;
 }
+
+img {
+  transition: 1s;
+}
+img:hover {
+  transform: scale(1.2);
+}
