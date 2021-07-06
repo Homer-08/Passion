@@ -19,6 +19,8 @@ nav span {
   height: 100vh;
 }
 
-img {
-  height: 300px;
+#userStats {
+  font-size: 30px;
+  color: white;
+  text-align: right;
 }
