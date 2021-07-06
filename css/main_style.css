@@ -10,3 +10,7 @@ body {
 nav {
   font-size: x-large;
 }
+
+nav span {
+  font-size: 40px;
+}
