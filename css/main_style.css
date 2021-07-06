@@ -14,3 +14,11 @@ nav {
 nav span {
   font-size: 40px;
 }
+
+.full {
+  height: 100vh;
+}
+
+img {
+  height: 300px;
+}
