@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Caveat", cursive;
+  background-image: url(/resources/images/main_backgroud.jpg);
+  background-size: cover;
+}
+
+nav {
+  font-size: x-large;
+}
+
+nav span {
+  font-size: 40px;
+}
+
+.full {
+  height: 100vh;
+}
+
+#userStats {
+  font-size: 30px;
+  color: white;
+  text-align: right;
+}
