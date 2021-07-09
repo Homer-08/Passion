@@ -20,6 +20,8 @@ nav span {
 }
 
 .img_shadow {
+  height: 157px;
+  width: 284px;
   box-shadow: 10px 10px 10px black;
 }
 
