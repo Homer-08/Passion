@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Caveat", cursive;
+    background-image: url(/resources/images/main_backgroud.jpg);
+    background-size: cover;
+  }
+  
+  nav {
+    font-size: x-large;
+  }
+  
+  nav span {
+    font-size: 40px;
+  }
+  
+  .full {
+    height: 100vh;
+  }
+
+  .dressed_item_cell {
+      max-width: 80px;
+      max-height: 80px;
+      min-height: 80px;
+      max-height: 80px;
+      color:white;
+      border: 5px solid #8B492A;
+      border-radius: 20px;
+      margin: 15px;
+      padding: 5px;
+      background: rgb(98,83,219);
+      background: linear-gradient(90deg, rgba(98,83,219,0.12088585434173671) 2%, rgba(0,0,0,1) 100%);
+  }
+
+  .item_icon {
+      max-width: 60px;
+      min-width: 60px;
+      max-height: 60px;
+      min-height: 60px;
+  }
+
+  .item_cell_description {
+    font-size: 20px;
+    text-align: center;
+    color:white;
+  }
