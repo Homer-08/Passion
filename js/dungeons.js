@@ -1,7 +1,6 @@
 let HTMLDungeonList = document.getElementById("dungeon_list_HTML")
 let HTMLModalWindowForFirstDungeon = document.getElementById("modal_window_for_first_dundeon")
 
-
 export let dungeon_list = {
     dungeon_1: {
         id: 1,
@@ -42,9 +41,17 @@ export let dungeon_list = {
     }
 }
 
+export function push_data(var_name, _var) {
+    localStorage.setItem(var_name, JSON.stringify(_var))
+}
+
+export function pull_data(var_name) {
+    let data = JSON.parse(localStorage.getItem(var_name))
+    return data
+}
+
 function showDungeonList() {
     let resDungeonList = ""
-
     for (var key in dungeon_list) {
         resDungeonList += '<div class="col-4 mt-3 text-center"><img class="img_shadow" src="' + dungeon_list[key].src +
             '"><button type="button" class="btn btn-secondary m-3 btn-lg btn_shadow" data-toggle="modal" data-target="#' + key + 'ModalWindow">' + dungeon_list[key].name + '</button></div>'
@@ -52,9 +59,8 @@ function showDungeonList() {
     HTMLDungeonList.insertAdjacentHTML('afterbegin', resDungeonList)
 }
 
-function showFirstMobsList() {
+function showFirstDungeonMobsList() {
     let first_mobs_list = ""
-
     let mobs_array = dungeon_list.dungeon_1.id_mobs
     let temp = pull_data('allMobs')
 
@@ -68,13 +74,5 @@ function showFirstMobsList() {
     HTMLModalWindowForFirstDungeon.insertAdjacentHTML('afterbegin', first_mobs_list)
 }
 
-function push_data(var_name, _var) {
-    localStorage.setItem(var_name, _var)
-}
-
-function pull_data(var_name) {
-    return JSON.parse(localStorage.getItem(var_name))
-}
-
 showDungeonList()
-showFirstMobsList()
+showFirstDungeonMobsList()

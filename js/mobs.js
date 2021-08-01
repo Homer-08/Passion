@@ -1,3 +1,5 @@
+import { push_data } from '/js/dungeons.js'
+
 class Monster {
     constructor(id, name, damage, health_points, image_src) {
         this.id = id
@@ -35,18 +37,5 @@ all_mobs.push(sixth_mob_for_first_dungeon)
 all_mobs.push(seventh_mob_for_first_dungeon)
 all_mobs.push(eighth_mob_for_first_dungeon)
 all_mobs.push(ninth_mob_for_first_dungeon)
-
-let first_mob_for_second_dungeon = new Monster("10", "Pix", "45", "55", "/resources/images/temporary_image.png")
-
-all_mobs.push(first_mob_for_second_dungeon)
-
-function push_data(var_name, _var) {
-    localStorage.setItem(var_name, JSON.stringify(_var))
-}
-
-function pull_data(var_name) {
-    let data = JSON.parse(localStorage.getItem(var_name))
-    return data
-}
 
 push_data("allMobs", all_mobs)
