@@ -1,5 +1,8 @@
+import { retrieve_data } from '/js/data_manipulation.js'
+
 let HTMLDungeonList = document.getElementById("dungeon_list_HTML")
 let HTMLModalWindowForFirstDungeon = document.getElementById("modal_window_for_first_dundeon")
+let selectedIMG
 
 export let dungeon_list = {
     dungeon_1: {
@@ -7,7 +10,7 @@ export let dungeon_list = {
         name: "Сastle of giants",
         max_number_mobs: 9,
         src: "/resources/images/dungeons/castle_of_giants.jpg",
-        id_mobs: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        mobs_id: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     },
     dungeon_2: {
         id: 2,
@@ -41,14 +44,7 @@ export let dungeon_list = {
     }
 }
 
-export function push_data(var_name, _var) {
-    localStorage.setItem(var_name, JSON.stringify(_var))
-}
-
-export function pull_data(var_name) {
-    let data = JSON.parse(localStorage.getItem(var_name))
-    return data
-}
+call()
 
 function showDungeonList() {
     let resDungeonList = ""
@@ -61,18 +57,49 @@ function showDungeonList() {
 
 function showFirstDungeonMobsList() {
     let first_mobs_list = ""
-    let mobs_array = dungeon_list.dungeon_1.id_mobs
-    let temp = pull_data('allMobs')
+    let mobs_array = dungeon_list.dungeon_1.mobs_id
+    let temp = retrieve_data('allMobs')
 
     for (var i = 0; i <= mobs_array.length - 1; i++) {
         if (temp[i].id == mobs_array[i]) {
             first_mobs_list += '<div class="col-4 mt-3 text-center"><h4>' + temp[i].name +
                 '</h4><div class="col-12"><img class="size_img model_img_shadow" src="' + temp[i].image_src +
-                '"></div><div class="col-12"><button type="button" class="btn btn-lg btn-light mt-3 btn_shadow">Fight</button></div></div>'
+                '"></div><div class="col-12"></div></div>'
         }
     }
     HTMLModalWindowForFirstDungeon.insertAdjacentHTML('afterbegin', first_mobs_list)
 }
 
-showDungeonList()
-showFirstDungeonMobsList()
+function call() {
+    showDungeonList()
+    showFirstDungeonMobsList()
+}
+
+document.getElementById("modal_window_for_first_dundeon").onclick = function (e) {
+    let target = e.target
+    while (target != this) {
+        if (target.tagName == 'IMG')
+            setGreenColor(target)
+        return;
+    }
+    target = target.parentNode
+}
+
+function setGreenColor(element) {
+    if (selectedIMG) {
+        console.log(selectedIMG)
+        selectedIMG.classList.remove('set-border')
+    }
+    selectedIMG = element
+    selectedIMG.classList.add('set-border');
+}
+
+var elem = document.querySelector('input[type="range"]');
+
+var rangeValue = function () {
+    var newValue = elem.value;
+    var target = document.querySelector('.value');
+    target.innerHTML = newValue;
+}
+
+elem.addEventListener("input", rangeValue);

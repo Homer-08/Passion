@@ -45,5 +45,44 @@ nav span {
 }
 
 .model_img_shadow {
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 5px 10px 50px black;
+}
+
+.modal-header {
+  border: 0px;
+  background-color: dimgray;
+}
+
+.set-border {
+  border: solid 3px green;
+}
+
+.value {
+  text-align: center;
+  font-weight: bold;
+  font-size: 10em;
+  width: 300px; 
+  height: 100px;
+  line-height: 60px;
+  text-shadow: white 2px 2px 2px;
+}
+
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 300px;
+  height: 5px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: .3s ease-in-out;
 }
